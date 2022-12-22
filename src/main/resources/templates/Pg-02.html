@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>API TESTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+
+</head>
+<body>
+
+<div th:replace="~{fragment/menuBar :: navigation}"></div>
+<div class="alert alert-warning">
+    <h3>Merchant Var - part 2 </h3>
+</div>
+
+<center>
+    <div class="container">
+        <!--        /dataRepoCheck -->
+        <div class="row">
+            <center>
+                <form action="/auth/merchantDetails-part2"
+                      th:action="@{/auth/merchantDetails-part2}" method="get" th:method="GET" name="frm" id="frm">
+                    <table class="table warning">
+
+                        <tr hidden="hidden">
+                            <td colspan="4">
+
+                                <input th:name='ruleTrn' value='ru~0003'>
+                                <input th:name='ruleCom' value='or~0003:P:60~0004:P:40~0006:A:5'>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>merchantVar1</th>
+                            <th>merchantVar2</th>
+                            <th>merchantVar3</th>
+                            <th>merchantVar4</th>
+
+                        </tr>
+                        <tr>
+                            <th><input type="text" name="merchantVar1" value=""></th>
+                            <td><input type="text" name="merchantVar2" value=""></td>
+                            <th><input type="text" name="merchantVar3" value=""></th>
+                            <th><input type="text" name="merchantVar4" value=""></th>
+                        </tr>
+                        <tr>
+                            <th>recurringPayment</th>
+                            <th>recurringPmtFlag</th>
+                            <th>recurring SeqNo</th>
+                            <th>recurring Remark</th>
+                        </tr>
+                        <tr>
+                            <th><input type="text" name="recurringPayment" value=""></th>
+                            <td><input type="text" name="recurringPmtFlag" value=""></td>
+                            <th><input type="text" name="recurringSeqNo" value=""></th>
+                            <td><input type="text" name="recurringRemark" value=""></td>
+                        </tr>
+                        <tr hidden="hidden">
+                            <th>requestToken</th>
+                            <th><input type="text" name="requestToken" value="Y"></th>
+                            <td>overrideReturnServiceURL</td>
+                            <td><input type="text" name="overrideReturnServiceURL"
+                                       value="http://www.merchant.com/test"></td>
+                            <td>version</td>
+                            <td><input type="text" name="version" value="1.00"></td>
+                        </tr>
+                        <tr style="background-color: yellowgreen">
+                            <th colspan="6">Device Finger Print</th>
+                        </tr>
+                        <tr>
+                            <td>[deviceType]</td>
+                            <td>[ruleCom]</td>
+                            <td>[cookiesEnabled]</td>
+                            <td>[browserName']</td>
+                            <td colspan="2">[countryCode]</td>
+                        </tr>
+                        <tr>
+                            <td><input th:name='deviceType' value='desktop'></td>
+                            <td><input th:name='ruleCom' value='en-US'></td>
+                            <td><input th:name='cookiesEnabled' value='Y'></td>
+                            <td><input th:name='browserName' value='Chrome 83'></td>
+                            <td colspan="2"><input th:name='countryCode' value='QA'></td>
+                        </tr>
+                        <tr>
+                            <td>[ipAddress]</td>
+                            <td>[trueIpAddress]</td>
+                            <td>[latitude]</td>
+                            <td>[longitude]</td>
+                            <td>[deviceType]</td>
+                        </tr>
+                        <tr>
+                            <td><input th:name='ipAddress' value='192.168.1.7'></td>
+                            <td><input th:each="ip:${actualIP}" th:name='trueIpAddress' th:value="${ip}"></td>
+                            <td><input th:name='latitude' value='1.000025897'></td>
+                            <td><input th:name='longitude' value='6.02547855'></td>
+                            <td><input th:name='deviceType' value=''></td>
+                        </tr>
+                        <tr style="background-color: yellowgreen">
+                            <th colspan="6">Billing Address</th>
+                        </tr>
+                        <tr>
+                            <td>[country]</td>
+                            <td>[zipCode]</td>
+                            <td>[streetAddress1]</td>
+                            <td>[streetAddress2]</td>
+                            <td>[cityOrTown]</td>
+                            <td>[firstName]</td>
+                        </tr>
+                        <tr>
+                            <td><input th:name='country' value='QA'></td>
+                            <td><input th:name='zipCode' value='8100'></td>
+                            <td><input th:name='streetAddress1'
+                                       value='Level 2, 240 High Level Rd, Colombo 00600, Qatar'></td>
+                            <td><input th:name='streetAddress2'
+                                       value='Level 2, 240 High Level Rd, Colombo 00600, Qatar'></td>
+                            <td><input th:name='cityOrTown' value='Colombo'></td>
+                            <td><input th:name='firstName' value='firstName'></td>
+                        </tr>
+                        <tr>
+
+                            <td>[lastName]</td>
+                            <td>[companyName]</td>
+                            <td>[state]</td>
+                            <td>[phoneNumber]</td>
+                            <td>[email]</td>
+                        </tr>
+                        <tr>
+
+                            <td><input th:name='lastName' value='lastName'></td>
+                            <td><input th:name='companyName' value='CompanyName'></td>
+                            <td><input th:name='state' value='state'></td>
+                            <td><input th:name='phoneNumber' value='01111111'></td>
+                            <td><input th:name='email' value='emailKAS@qnb.com'></td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        <tr>
+                            <td colspan="4"><input type="submit" value="NEXT >> " class="btn btn-danger"></td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+
+
+        </div>
+    </div>
+</center>
+</body>
+</html>

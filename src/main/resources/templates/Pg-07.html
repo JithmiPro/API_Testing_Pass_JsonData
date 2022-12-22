@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>API TESTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+
+</head>
+<body>
+
+<div th:replace="~{fragment/menuBar :: navigation}"></div>
+<div class="alert alert-info">
+    <h3>Merchant Var - part 7</h3>
+</div>
+
+<center>
+    <div class="container">
+        <!--        /dataRepoCheck -->
+        <center>
+            <form action="/auth/merchantDetails-part7"
+                  th:action="@{/auth/merchantDetails-part7}" method="get" th:method="GET" name="frm" id="frm">
+                <table class="table">
+                    <tr style="background-color: cornflowerblue;color: #EAEAEA">
+                        <td colspan="5"> purchasing Additional Data</td>
+                        <td><input type="submit" value="SUBMIT" class="btn btn-danger"></td>
+                    </tr>
+                    <tr>
+                        <th>recordType</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="PL"></td>
+
+                        <th>messageIdentifier</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="1234567890qwe">
+                        </td>
+
+                        <th>commodityCode</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="1234567890.q"></td>
+                    </tr>
+                    <tr>
+                        <th>itemDescriptor</th>
+                        <td><input type="text" class="form form-control" th:name="recordType"
+                                   value="123456789012345678901234">
+                            <input type="text" class="form form-control" th:name="recordType" value="a"></td>
+
+                        <th>productCode</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="1234567890.a">
+                        </td>
+
+                        <th>quantity</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="123456789012"></td>
+                    </tr>
+                    <tr>
+                        <th>unitOfMeasure</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="kasuns12345."></td>
+
+                        <th>unitCost</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="123456789.12">
+                        </td>
+
+                        <th>vatTaxAmount</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="999999999.12"></td>
+                    </tr>
+                    <tr>
+                        <th>vatTaxRate</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="1234"></td>
+
+                        <th>discountPerLineItem</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="123456789012">
+                        </td>
+
+                        <th>lineItemTotal</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="123456789012"></td>
+                    </tr>
+                    <tr>
+                        <th>detailIndicator</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value=""></td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </div>
+</center>
+</body>
+</html>

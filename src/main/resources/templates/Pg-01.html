@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>API TESTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+
+</head>
+<body>
+
+<div th:replace="~{fragment/menuBar :: navigation}"></div>
+<h3> Merchant Details </h3>
+<center>
+    <div class="container">
+        <!--        /dataRepoCheck -->
+        <div class="row">
+            <div class="col-4">
+                <center>
+                    <form action="/auth/merchantDetails"
+                          th:action="@{/auth/merchantDetails}" method="get" th:method="GET" name="frm" id="frm">
+                        <table class="table warning">
+                            <thead>Merchant's Details</thead>
+                            <tr hidden="hidden">
+                                <th><i class='fas fa-address-card'></i></th><th>MerchantId</th>
+                                <td><input class="form-control" th:name="merchantId" name="merchantId"
+                                           value="001700001008216" type="text"></td>
+                            </tr>
+                            <tr hidden="hidden">
+                                <th><i class='fas fa-fingerprint'></i></th><th>MerchantPwd</th>
+                                <td><input class="form-control" th:name="merchantPwd" name="merchantPwd"
+                                           value="00160A6FDFBFA4F8A2F0C13D9E13FAB47AA9BF7172F0B384DB76CD054CAAC63EB58FBF6886C57D12F59EF9AB6BA8D01D850"
+                                           type="password"></td>
+                            </tr>
+                            <tr hidden="hidden">
+                                <th><i class='fas fa-key'></i></th><th> merchantKey</th>
+                                <td><input class="form-control" th:name="merchantKey" name="merchantKey"
+                                           value="UHMwMDE3MDAwMDEwMDgyMTYyZjEyYTMwMS0zMzA1LTRhMzktOTczMC1iZTA4ZWU1ZjJmY"
+                                           type="text"></td>
+                            </tr>
+                            <tr>
+                                <th><i class='fas fa-id-card-alt'></i></th><th> merchantTxnId</th>
+                                <td><input class="form-control" th:name="merchantTxnId" name="merchantTxnId" type="text"
+                                           value="30965"></td>
+                            </tr>
+                            <tr>
+                                <th><i class='fas fa-file-signature'></i></th><th>TxnType</th>
+                                <td><input class="form-control" th:name="txnType" name="txnType" type="text"
+                                           value="sale"></td>
+                            </tr>
+                            <tr>
+                                <th><i class='far fa-credit-card'></i></th><th>
+                                    productType
+                                </th>
+                                <td><select class="selection-handle form-control" th:name="productType"
+                                            name="productType">
+                                    <option>Visa</option>
+                                    <option>Master</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <th><i class='fas fa-comment-dollar'></i></th><th> txnAmt</th>
+                                <td><input class="form-control" th:name="txnAmt" name="txnAmt" type="text" value="3.19">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class='fas fa-cash-register'></i></th><th> currCode</th>
+                                <td><input class="form-control" th:name="currCode" name="currCode" type="text"
+                                           value="QAR"></td>
+                            </tr>
+                            <tr>
+                                <th> <i class='fas fa-file-invoice'></i></th><th> instrumentType</th>
+                                <td><input class="form-control" th:name="instrumentType" name="instrumentType"
+                                           type="text" value="card">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class='fas fa-money-check-alt'></i></th><th>Card Holder Name</th>
+                                <td><input class="form-control" th:name="CardHolderName" name="CardHolderName"
+                                           type="text" value="Ahamed">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class='fas fa-receipt'></i></th>
+                                <th>token</th>
+                                <td>
+                                    <input class="form-control" th:name="token" value="" name="token" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="submit" class="btn btn-info" value="submit">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </center>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</center>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!--session.setAttribute("SESSION_DETAILS", req.userId);-->
+
+<nav class="navbar navbar-expand-sm bg-light navbar-light" th:fragment="navigation" style="background-color:black">
+    <div class="container-fluid">
+<!--        <span class="userId" th:text="${#authentication.getPrincipal().username}"></span>-->
+        <ul class="navbar-nav" style="color: black" >
+
+
+            <li class="nav-item" th:each="note:${abc}"   th:text="${note}" th:value="${note}">
+
+                <a class="nav-link active"><i class='far fa-address-card'></i>User Name</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Welcome</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>API TESTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+
+</head>
+<body>
+
+<div th:replace="~{fragment/menuBar :: navigation}"></div>
+<div class="alert alert-info">
+    <h3>Merchant Var - part 4 </h3>
+</div>
+
+<center>
+    <div class="container">
+        <!--        /dataRepoCheck -->
+        <center>
+            <form action="/auth/merchantDetails-part4"
+                  th:action="@{/auth/merchantDetails-part4}" method="get" th:method="GET" name="frm" id="frm">
+                <div class="row">
+
+                    <table class="table">
+                        <tr style="background-color: cornflowerblue;color: #EAEAEA">
+                            <td colspan="5"> itinerary Record Set 01</td>
+                            <td> <input type="submit" value="SUBMIT" class="btn btn-danger"></td>
+                        </tr>
+
+                        <tr>
+                            <th>recordType</th>
+                            <th>recordSequence</th>
+                            <th>conjunctionTicket</th>
+                            <th>travelDepartureDate</th>
+                            <th>exchangeTicket</th>
+                            <th>carrier</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" th:name="recordType" class="form-control" value=""></td>
+                            <td><input type="text" th:name="recordSequence" class="form-control" value=""></td>
+                            <td><input type="text" th:name="conjunctionTicket" class="form-control"
+                                       value=""></td>
+                            <td><input type="text" th:name="travelDepartureDate" class="form-control" value=""></td>
+                            <td><input type="text" th:name="exchangeTicket" class="form-control" value=""></td>
+                            <td><input type="text" th:name="carrier" class="form-control" value=""></td>
+
+                        </tr>
+                        <tr>
+                            <th>couponNumber</th>
+                            <th>fldClass</th>
+                            <th>stopOver</th>
+                            <th>cityOfOrigin</th>
+                            <th>destination</th>
+                            <th>fareBasisCode</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" th:name="couponNumber" class="form-control" value=""></td>
+                            <td><input type="text" th:name="fldClass" class="form-control" value=""></td>
+                            <td><input type="text" th:name="stopOver" class="form-control" value=""></td>
+                            <td><input type="text" th:name="cityOfOrigin" class="form-control" value=""></td>
+                            <td><input type="text" th:name="destination" class="form-control" value=""></td>
+                            <td><input type="text" th:name="fareBasisCode" class="form-control" value=""></td>
+
+                        </tr>
+                        <tr>
+                            <th>flightNumber</th>
+                            <th>departureTime</th>
+                            <th>departureTimeSegment</th>
+                            <th>arrivalTime</th>
+                            <th>arrivalTimeSegment</th>
+                            <th>fare</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" th:name="flightNumber" class="form-control" value=""></td>
+                            <td><input type="text" th:name="departureTime" class="form-control" value=""></td>
+                            <td><input type="text" th:name="departureTimeSegment" class="form-control" value="">
+                            </td>
+                            <td><input type="text" th:name="arrivalTime" class="form-control" value=""></td>
+                            <td><input type="text" th:name="arrivalTimeSegment" class="form-control" value=""></td>
+                            <td><input type="text" th:name="fare" class="form-control" value=""></td>
+
+                        </tr>
+                        <tr>
+                            <th>fee</th>
+                            <th>taxes</th>
+                            <th>endorsementRestrictions</th>
+                        </tr>
+                        <tr>
+                            <td><input type="date" th:name="fee" class="form-control" value=""></td>
+                            <td><input type="text" th:name="taxes" class="form-control" value=""></td>
+                            <td><input type="text" th:name="endorsementRestrictions" class="form-control" value="">
+                            </td>
+
+                        </tr>
+                    </table>
+                    <br>
+                    <table class="table">
+                        <tr style="background-color: cornflowerblue;color: #EAEAEA">
+                            <td colspan="6"> itinerary Record Set 02</td>
+
+                        </tr>
+
+                        <tr>
+                            <th>recordType</th>
+                            <th>recordSequence</th>
+                            <th>conjunctionTicket</th>
+                            <th>travelDepartureDate</th>
+                            <th>exchangeTicket</th>
+                            <th>carrier</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" th:name="recordType" class="form-control" value=""></td>
+                            <td><input type="text" th:name="recordSequence" class="form-control" value=""></td>
+                            <td><input type="text" th:name="conjunctionTicket" class="form-control"
+                                       value=""></td>
+                            <td><input type="text" th:name="travelDepartureDate" class="form-control" value=""></td>
+                            <td><input type="text" th:name="exchangeTicket" class="form-control" value=""></td>
+                            <td><input type="text" th:name="carrier" class="form-control" value=""></td>
+
+                        </tr>
+                        <tr>
+                            <th>couponNumber</th>
+                            <th>fldClass</th>
+                            <th>stopOver</th>
+                            <th>cityOfOrigin</th>
+                            <th>destination</th>
+                            <th>fareBasisCode</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" th:name="couponNumber" class="form-control" value=""></td>
+                            <td><input type="text" th:name="fldClass" class="form-control" value=""></td>
+                            <td><input type="text" th:name="stopOver" class="form-control" value=""></td>
+                            <td><input type="text" th:name="cityOfOrigin" class="form-control" value=""></td>
+                            <td><input type="text" th:name="destination" class="form-control" value=""></td>
+                            <td><input type="text" th:name="fareBasisCode" class="form-control" value=""></td>
+
+                        </tr>
+                        <tr>
+                            <th>flightNumber</th>
+                            <th>departureTime</th>
+                            <th>departureTimeSegment</th>
+                            <th>arrivalTime</th>
+                            <th>arrivalTimeSegment</th>
+                            <th>fare</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" th:name="flightNumber" class="form-control" value=""></td>
+                            <td><input type="text" th:name="departureTime" class="form-control" value=""></td>
+                            <td><input type="text" th:name="departureTimeSegment" class="form-control" value="">
+                            </td>
+                            <td><input type="text" th:name="arrivalTime" class="form-control" value=""></td>
+                            <td><input type="text" th:name="arrivalTimeSegment" class="form-control" value=""></td>
+                            <td><input type="text" th:name="fare" class="form-control" value=""></td>
+
+                        </tr>
+                        <tr>
+                            <th>fee</th>
+                            <th>taxes</th>
+                            <th>endorsementRestrictions</th>
+                        </tr>
+                        <tr>
+                            <td><input type="date" th:name="fee" class="form-control" value=""></td>
+                            <td><input type="text" th:name="taxes" class="form-control" value=""></td>
+                            <td><input type="text" th:name="endorsementRestrictions" class="form-control" value="">
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </form>
+        </center>
+    </div>
+</center>
+</body>
+</html>

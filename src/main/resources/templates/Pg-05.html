@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>API TESTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+
+</head>
+<body>
+
+<div th:replace="~{fragment/menuBar :: navigation}"></div>
+<div class="alert alert-info">
+    <h3>Merchant Var - part 5</h3>
+</div>
+
+<center>
+    <div class="container">
+        <!--        /dataRepoCheck -->
+        <center>
+            <form action="/auth/merchantDetails-part5"
+                  th:action="@{/auth/merchantDetails-part5}" method="get" th:method="GET" name="frm" id="frm">
+                <table class="table">
+                    <tr style="background-color: cornflowerblue;color: #EAEAEA">
+                        <td colspan="5"> vehicle Rental </td>
+                        <td><input type="submit" value="SUBMIT" class="btn btn-danger"></td>
+                    </tr>
+                    <tr>
+                        <th>recordType</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="A"></td>
+
+                        <th>recordSequence</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="a4"></td>
+
+                        <th>renterName</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="123456789 1234567890123456789012345678q."></td>
+                    </tr>
+                    <tr>
+                        <th>returnCity</th>
+                        <td><input type="text" class="form form-control" th:name="returnCity"
+                                   value="12345678901234567890qwe.r"></td>
+
+                        <th>returnCountry</th>
+                        <td><input type="text" class="form form-control" th:name="returnCountry" value="1s-"></td>
+
+                        <th>returnDate</th>
+                        <td><input type="text" class="form form-control" th:name="returnDate" value="20200420"></td>
+                    </tr>
+                    <tr>
+                        <th>returnLocationID</th>
+                        <td><input type="text" class="form form-control" th:name="returnLocationID" value="12345678.q">
+                        </td>
+                        <th>customerServiceNo</th>
+                        <td><input type="text" class="form form-control" th:name="customerServiceNo" value="12345678@q">
+                        </td>
+                        <th>rentalClass</th>
+                        <td><input type="text" class="form form-control" th:name="rentalClass" value="1"></td>
+                    </tr>
+                    <tr>
+                        <th>dailyRentalRate</th>
+                        <td><input type="text" class="form form-control" th:name="dailyRentalRate" value="100023456.01">
+                        </td>
+
+                        <th>weeklyRentalRate</th>
+                        <td><input type="text" class="form form-control" th:name="weeklyRentalRate"
+                                   value="100023456.01"></td>
+
+                        <th>ratePerMile</th>
+                        <td><input type="text" class="form form-control" th:name="ratePerMile" value="100004"></td>
+                    </tr>
+                    <tr>
+                        <th>totalMiles</th>
+                        <td><input type="text" class="form form-control" th:name="totalMiles" value="1000"></td>
+
+                        <th>maximumFreeMiles</th>
+                        <td><input type="text" class="form form-control" th:name="maximumFreeMiles" value="2000"></td>
+
+                        <th>insuranceIndicator</th>
+                        <td><input type="text" class="form form-control" th:name="insuranceIndicator" value="Y"></td>
+                    </tr>
+                    <tr>
+                        <th>insuranceCharges</th>
+                        <td><input type="text" class="form form-control" th:name="insuranceCharges"
+                                   value="100999000.12"></td>
+
+                        <th>fuelCharges</th>
+                        <td><input type="text" class="form form-control" th:name="fuelCharges" value="905100990.23">
+                        </td>
+
+                        <th>adjustmentAmountIndicator</th>
+                        <td><input type="text" class="form form-control" th:name="adjustmentAmountIndicator" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>adjustmentAmountOneWayDropOffcharges</th>
+                        <td><input type="text" class="form form-control" th:name="adjustmentAmountOneWayDropOffcharges"
+                                   value="932305000.09"></td>
+
+                        <th>programCode</th>
+                        <td><input type="text" class="form form-control" th:name="programCode" value="1b"></td>
+
+                        <th>checkOutDate</th>
+                        <td><input type="text" class="form form-control" th:name="checkOutDate" value="20200400"></td>
+                    </tr>
+                    <tr>
+                        <th>purchaseIdentifierRentalAgreementNumber</th>
+                        <td><input type="text" class="form form-control"
+                                   th:name="purchaseIdentifierRentalAgreementNumber" value="12345678901234567890qwer.">
+                        </td>
+
+                        <th>noShowIndicator</th>
+                        <td><input type="text" class="form form-control" th:name="noShowIndicator" value="1"></td>
+
+                        <th>carRentalExtraCharges</th>
+                        <td><input type="text" class="form form-control" th:name="carRentalExtraCharges" value="012 46">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>milesKMIndicator</th>
+                        <td><input type=" text" value="M" class="form form-control">
+                        </td>
+                    </tr>
+                </table>
+
+
+    </div>
+    </form>
+</center>
+</div>
+</center>
+</body>
+</html>

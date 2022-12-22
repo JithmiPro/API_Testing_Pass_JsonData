@@ -1,0 +1,128 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    body {
+        text-align: center;
+        padding: 40px 0;
+        background: #EBF0F5;
+    }
+
+    h1 {
+        color: #88B04B;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #404F5E;
+        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    i {
+        color: #9ABC66;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left: -15px;
+    }
+
+    .card {
+        background: white;
+        padding: 60px;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px #C8D0D8;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+     .dot {
+         height: 25px;
+         width: 25px;
+         background-color: goldenrod;
+         color: black;
+         border-radius: 50%;
+         display: inline-block;
+     }
+
+</style>
+<body>
+<div class="card">
+    <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+        <i class="checkmark">✓</i>
+    </div>
+    <h1 th:each="msg:${done}">Success</h1>
+    <p>
+        <span class="dot" th:each="col:${color1}"    th:style="'background-color:'+${col}" >L</span>
+        <span class="dot" th:each="col:${color2}"    th:style="'background-color:'+${col}" >1</span>
+        <span class="dot" th:each="col:${color3}"    th:style="'background-color:'+${col}" >2 </span>
+        <span class="dot" th:each="col:${color4}"    th:style="'background-color:'+${col}" >3</span>
+        <span class="dot" th:each="col:${color5}"    th:style="'background-color:'+${col}" >4</span>
+        <span class="dot" th:each="col:${color6}"    th:style="'background-color:'+${col}" >5</span>
+        <span class="dot" th:each="col:${color7}"    th:style="'background-color:'+${col}" >6</span>
+        <span class="dot" th:each="col:${color8}"    th:style="'background-color:'+${col}" >7</span>
+    </p>
+    <div class="alert alert-info">
+        <div>
+            <p th:each="Note1:${Note1}" th:text="${Note1}"></p>
+        </div>
+        <h2>
+            <form action="/FrontPg" th:action="@{/FrontPg}" method="get" th:method="GET"
+                  name="frm" id="frm">
+                <input value="Merchant Details part 1 >>>" type="submit" class="btn btn-danger" th:each="msg: ${visi}"
+                       th:hidden="${msg}">
+            </form>
+
+            <form action="/NextPg02" th:action="@{/NextPg02}" method="get" th:method="GET"
+                  th:each="msg1: ${visi1}"
+                  th:hidden="${msg1}" name="frm" id="frm2">
+                <input value="Merchant Details  part 2 >>>" type="submit" class="btn btn-info">
+            </form>
+
+            <form action="/NextPg_03" th:action="@{/NextPg_03}" method="get" th:method="GET"
+                  th:each="msg2: ${visi2}"
+                  th:hidden="${msg2}" name="frm" id="frm3">
+                <input value="Merchant Details  part 3 >>>" type="submit" class="btn btn-success">
+            </form>
+
+            <form action="/NextPg_04" th:action="@{/NextPg_04}" method="get" th:method="GET"
+                  th:each="msg3: ${visi3}"
+                  th:hidden="${msg3}" name="frm" id="frm4">
+                <input value="Merchant Details  part 4 >>>" type="submit" class="btn btn-success">
+            </form>
+            <form action="/NextPg_05" th:action="@{/NextPg_05}" method="get" th:method="GET"
+                  th:each="msg4: ${visi4}"
+                  th:hidden="${msg4}" name="frm" id="visi4">
+                <input value="Merchant Details  part 5 >>>" type="submit" class="btn btn-success">
+            </form>
+            <form action="/NextPg_06" th:action="@{/NextPg_06}" method="get" th:method="GET"
+                  th:each="msg5: ${visi5}"
+                  th:hidden="${msg5}" name="frm" id="visi5">
+                <input value="Merchant Details  part 6 >>>" type="submit" class="btn btn-success">
+            </form>
+
+            <form action="/NextPg_07" th:action="@{/NextPg_07}" method="get" th:method="GET"
+                  th:each="msg6: ${visi6}"
+                  th:hidden="${msg6}" name="frm" id="visi5">
+                <input value="Merchant Details  part 7 >>>" type="submit" class="btn btn-success" >
+            </form>
+
+        </h2>
+    </div>
+
+
+</div>
+</body>
+</html>

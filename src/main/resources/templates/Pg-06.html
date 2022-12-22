@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>API TESTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!--Get your own code at fontawesome.com-->
+
+</head>
+<body>
+
+<div th:replace="~{fragment/menuBar :: navigation}"></div>
+<div class="alert alert-info">
+    <h3>Merchant Var - part 6</h3>
+</div>
+
+<center>
+    <div class="container">
+        <!--        /dataRepoCheck -->
+        <center>
+            <form action="/auth/merchantDetails-part6"
+                  th:action="@{/auth/merchantDetails-part6}" method="get" th:method="GET" name="frm" id="frm">
+                <table class="table">
+                    <tr style="background-color: cornflowerblue;color: #EAEAEA">
+                        <td colspan="5"> purchasing Additional Data</td>
+                        <td><input type="submit" value="SUBMIT" class="btn btn-danger"></td>
+                    </tr>
+
+                    <tr>
+                        <th>recordType</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="PA"></td>
+
+                        <th>recordSequence</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="1.c"></td>
+
+                        <th>discountAmount</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="932399111.12"></td>
+                    </tr>
+                    <tr>
+                        <th>freightShippingAmount</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="930395346.12"></td>
+
+                        <th>dutyAmount</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="932399009.99">
+                        </td>
+
+                        <th>destinationPostalZIPcode</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="950146000"></td>
+                    </tr>
+                    <tr>
+                        <th>shipPostalZIPCode</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="1514567890"></td>
+
+                        <th>destinationCountry</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="1.q"></td>
+
+                        <th>vatInvoiceReference</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="kasun678901234"></td>
+                    </tr>
+                    <tr>
+                        <th>orderDate</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="1514567890"></td>
+
+                        <th>accountNumber</th>
+                        <td><input type="text" class="form form-control" th:name="recordSequence" value="1234567890">
+                        </td>
+
+                        <th>accountNumberExtension</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="123"></td>
+                    </tr>
+                    <tr>
+                        <th>freightShippingVatTax</th>
+                        <td><input type="text" class="form form-control" th:name="recordType" value="912099519.99"></td>
+                        <th>freightShippingVatTaxRate</th>
+                        <td><input type="text" class="form form-control" th:name="renterName"
+                                   value="1512"></td>
+                    </tr>
+
+
+                </table>
+
+
+    </div>
+    </form>
+</center>
+</div>
+</center>
+</body>
+</html>
